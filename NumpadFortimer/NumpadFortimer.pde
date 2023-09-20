@@ -42,7 +42,13 @@ void setup() {
    //*/
    } //End Setup
    //
-  void draw() {/*
+  void draw() {
+    for(int i=0; i<numPadColumns; i++) {
+      for(int j=0; j<numPadRows-1; j++) {
+          rect(x[i], y[j], widthSquare, heightSquare);
+      }// End for
+    }//End for 
+    /*
   rect(x0, y0, widthSquare, heightSquare);
    rect(x0, y1, widthSquare, heightSquare);
    rect(x0, y2, widthSquare, heightSquare);
@@ -57,9 +63,18 @@ void setup() {
    rect(x2, y3, widthSquare, heightSquare);*/
   } //End draw
   //
-  void mousePressed() {/*
+  void mousePressed() {
+  for(int i=0; i<numPadColumns; i++) {
+      for(int j=0; j<numPadRows-2; j++) {
+          if (mouseX>x[i] && mouseX<x[i]+widthSquare && mouseY>y[j] && mouseY<y[j]+widthSquare) println(j*3+i+1);
+      }// End for
+    }//End for 
+    if ( mouseX>x[0] && mouseX<x[0]+widthSquare && mouseY>y[3] && mouseY<y[3]+widthSquare) println("00");
+    if ( mouseX>x[1] && mouseX<x[1]+widthSquare && mouseY>y[3] && mouseY<y[3]+widthSquare) println("0");
+    if ( mouseX>x[2] && mouseX<x[2]+widthSquare && mouseY>y[3] && mouseY<y[3]+widthSquare) println("ENTER");
   //mouseX> && mouseX< && mouseY> && mouseY<
    //x0, y0, widthSquare, heightSquare
+   /*
    if ( mouseX>x0 && mouseX<x0+widthSquare && mouseY>y0 && mouseY<y0+widthSquare) println("1");
    if ( mouseX>x1 && mouseX<x1+widthSquare && mouseY>y0 && mouseY<y0+widthSquare) println("2");
    if ( mouseX>x2 && mouseX<x2+widthSquare && mouseY>y0 && mouseY<y0+widthSquare) println("3");
