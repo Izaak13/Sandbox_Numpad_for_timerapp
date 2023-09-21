@@ -43,6 +43,10 @@ void setup() {
    } //End Setup
    //
   void draw() {
+    //
+    fill(#99BDF5);
+    stroke(#FF8F05);
+    //
     for(int i=0; i<numPadColumns; i++) {
       for(int j=0; j<numPadRows-1; j++) {
           rect(x[i], y[j], widthSquare, heightSquare);
