@@ -41,7 +41,10 @@ void setup() {
    // Nested FOR, reading rect() arrays
    //*/
    } //End Setup
-   //
+   float  writeCoordinate (int i, int oddStart) {
+     return widthSquare*(2*i+oddStart)/2;
+   }
+     // End writecoordinate
   void draw() {
     //
     fill(#99BDF5);
@@ -53,7 +56,7 @@ void setup() {
       }// End for
     }//End for 
     /*
-  rect(x0, y0, widthSquare, heightSquare);
+   rect(x0, y0, widthSquare, heightSquare);
    rect(x0, y1, widthSquare, heightSquare);
    rect(x0, y2, widthSquare, heightSquare);
    rect(x0, y3, widthSquare, heightSquare);
@@ -71,6 +74,7 @@ void setup() {
   for(int i=0; i<numPadColumns; i++) {
       for(int j=0; j<numPadRows-2; j++) {
           if (mouseX>x[i] && mouseX<x[i]+widthSquare && mouseY>y[j] && mouseY<y[j]+widthSquare) println(j*3+i+1);
+          
       }// End for
     }//End for 
     if ( mouseX>x[0] && mouseX<x[0]+widthSquare && mouseY>y[3] && mouseY<y[3]+widthSquare) println("00");
