@@ -3,71 +3,27 @@
  Start with width, then error check height.
  */
 //Global Variables
-int appWidth, appHeight; //CAUTION, decimals don't work in integers, not floats or doubles
-float widthSquare, heightSquare;
-int numPadColumns = 3;
-int numPadRows = 5;
-float[] x = new float [numPadColumns];
-float[] y = new float [numPadRows];
+//CAUTION, decimals don't work in integers, not floats or doubles
 //
 void setup() {
-  size (400, 800);
-  appWidth = width;
-  appHeight = height;
-  //
-  // Population of rect() variables
-  widthSquare=appWidth*1/4;
-  heightSquare=widthSquare;
-  for (int i=0; i<numPadColumns; i++ ) { //i stops for x, not y
-    x[i] = widthSquare*(2*i+1)/2;
-    println("Inside x", x[i]);
-  } //End For
-  for (int i=0; i<numPadRows; i++) {
-    y[i] = widthSquare*(2*i+5)/2;
-    println("Inside y", y[i]);
-  }//End For
-  //
-  //if(i<numPadColumns)
-  //println("Inside y", y[i], "/t");
-  printArray(x);
-  printArray(y);
-  /*
-  y0=widthSquare*5/2;
-   y1=widthSquare*7/2;
-   y2=widthSquare*9/2;
-   y3=widthSquare*11/2;
-   y4=widthSquare*14/2;
-   //
-   // Nested FOR, reading rect() arrays
-   //*/
+  size (400, 400);
+  display();
+  population();
+  textSetup();
    } //End Setup
-   float  writeCoordinate (int i, int oddStart) {
-     return widthSquare*(2*i+oddStart)/2;
-   }
-     // End writecoordinate
   void draw() {
     //
-    fill(#99BDF5);
+    fill(#E36B1B);
     stroke(#FF8F05);
+    numPadRects();
+    fill(#F0CC18); //Ink, hexadecimal
+    textAlign (CENTER, CENTER); //Align X&Y
+    //Values: [left , center , right] & [top , center, bottom , baseline]
+    size = 50;
+    textFont(font, 50); //Change the number until it fits, largest font size
     //
-    for(int i=0; i<numPadColumns; i++) {
-      for(int j=0; j<numPadRows-1; j++) {
-          rect(x[i], y[j], widthSquare, heightSquare);
-      }// End for
-    }//End for 
-    /*
-   rect(x0, y0, widthSquare, heightSquare);
-   rect(x0, y1, widthSquare, heightSquare);
-   rect(x0, y2, widthSquare, heightSquare);
-   rect(x0, y3, widthSquare, heightSquare);
-   rect(x1, y0, widthSquare, heightSquare);
-   rect(x1, y1, widthSquare, heightSquare);
-   rect(x1, y2, widthSquare, heightSquare);
-   rect(x1, y3, widthSquare, heightSquare);
-   rect(x2, y0, widthSquare, heightSquare);
-   rect(x2, y1, widthSquare, heightSquare);
-   rect(x2, y2, widthSquare, heightSquare);
-   rect(x2, y3, widthSquare, heightSquare);*/
+    text(title, titleX, titleY, titleWidth, titleHeight);
+    fill(whiteInk); //reset
   } //End draw
   //
   void mousePressed() {
