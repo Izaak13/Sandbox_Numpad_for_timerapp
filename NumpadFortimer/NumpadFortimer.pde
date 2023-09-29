@@ -16,14 +16,7 @@ void setup() {
     fill(#E36B1B);
     stroke(#FF8F05);
     numPadRects();
-    fill(#F0CC18); //Ink, hexadecimal
-    textAlign (CENTER, CENTER); //Align X&Y
-    //Values: [left , center , right] & [top , center, bottom , baseline]
-    size = 50;
-    textFont(font, 50); //Change the number until it fits, largest font size
-    //
-    text(title, titleX, titleY, titleWidth, titleHeight);
-    fill(whiteInk); //reset
+    textDraw(purple, CENTER, CENTER, font, title, titleX, titleY, titleWidth, titleHeight);
   } //End draw
   //
   void mousePressed() {
